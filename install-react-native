@@ -7,11 +7,13 @@ if [[ "$(uname)" == "Darwin" ]]; then
     fi
     # Install node/npm and react-native.
     brew install node
-    npm update -g && npm install -g react-native
+    npm install -g npm@4.6.1
+    npm install -g react-native
 #For Debian based distros
 else
     sudo apt-get update && sudo apt upgrade
 	sudo apt-get install nodejs npm
-    npm update -g && npm install -g react-native
+    npm install -g npm@4.6.1
+    npm install -g react-native
 fi	
 echo "Installed Node.js, NPM, and React-Native"
