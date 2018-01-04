@@ -1,0 +1,13 @@
+#!/bin/bash
+if [[ "$(uname)" == "Darwin" ]]; then
+    xcode-select --install
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew install node
+    npm update -g && npm install -g react-native
+    #For Linux (
+else
+    sudo apt-get update && sudo apt upgrade
+	sudo apt-get install nodejs npm
+    npm update -g && npm install -g react-native
+fi	
+echo "Installed Node.js, NPM, and React-Native"
