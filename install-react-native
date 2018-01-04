@@ -1,10 +1,14 @@
 #!/bin/bash
 if [[ "$(uname)" == "Darwin" ]]; then
-    xcode-select --install
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+#Check to see if you have homebrew installed. If not, the following 2 lines installs it for you.
+    if [[ "$(which brew)" == "" ]]; then
+      xcode-select --install
+      /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+    # Install node/npm and react-native.
     brew install node
     npm update -g && npm install -g react-native
-    #For Linux (
+#For Debian based distros
 else
     sudo apt-get update && sudo apt upgrade
 	sudo apt-get install nodejs npm
